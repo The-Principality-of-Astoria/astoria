@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Royal Decrees | Principality of Astoria</title>
+
+<style>
+
+body {
+font-family: Georgia, serif;
+background-color: #0b1a2a;
+color: white;
+margin: 0;
+}
+
+header {
+background-color: #132f4c;
+padding: 20px;
+text-align: center;
+}
+
+nav {
+background-color: #091320;
+padding: 10px;
+text-align: center;
+}
+
+nav a {
+color: white;
+margin: 0 15px;
+text-decoration: none;
+font-weight: bold;
+}
+
+nav a:hover {
+color: gold;
+}
+
+main {
+padding: 40px;
+max-width: 900px;
+margin: auto;
+line-height: 1.6;
+}
+
+footer {
+background-color: #091320;
+text-align: center;
+padding: 15px;
+margin-top: 40px;
+}
+
+h1, h2, h3 {
+color: gold;
+}
+
+.section {
+margin-bottom: 30px;
+}
+
+ul {
+margin-top: 5px;
+}
+
+.motto {
+font-style: italic;
+color: gold;
+text-align: center;
+margin-bottom: 30px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Royal Decrees of Her Sovereign Highness, Princess Regnent of Astoria</h1>
+
+<p class="motto">
+For All Time, For All People, Always
+</p>
+
+</header>
+
+
+<nav>
+
+<a href="index.html">Home</a>
+<a href="government.html">Government</a>
+<a href="constitution.html">Constitution</a>
+<a href="citizenship.html">Citizenship</a>
+<a href="decrees.html">Decrees</a>
+
+</nav>
+
+
+<main>
+<h2>Royal Decrees</h2>
+<p>This page serves as the official public register of Royal Decrees issued by the Her Sovereign Highness, the Princess Regnant of the Principality of Astoria.</p>
+<p>Royal decrees carry the full force of law upon issuance and remain in force unless revoked by the Princess Regnant or superseded by subsequent law or decree</p>
+
+<p>Decrees are listed newest first. Use your browser search (CTRL+F) to find a decree by number or title.</p>
+
+<h3>Register</h3>
+<details>
+  <summary><strong>RD-2026-001 - Proclamation of the Constitution</strong> (Issued: 25 February 2026) - <em>In Force</em></summary>
+  <p><strong>Summary:</strong> To proclaim the establishment of the Principality of Astoria and its Constitution.</p>
+
+  <p><strong>Text:</strong></p>
+  <p>By the authority vested in the Crown, and in recognition of the enduring sovereignty, unity, and future of the Principality.</p>
+
+  <p>I, Lillian Rose, Her Sovereign Highness, the Princess Regnant of the Principality of Astoria, do hereby proclaim and establish this Constitution as the supreme governing framework of the Principality of Astoria.</p>
+
+  <p>This Constitution shall define the structure, function, and continuity of the Government of Astoria, establish the institutions of the state, affirm the rights and duties of its citizens, and secure the perpetual sovereignty of the Crown.</p>
+
+  <p>From this day forward, all offices, institutions and authorities of Astoria shall operate in accordance with this Constitution, under the supreme authority of the Princess Regnant.</p>
+
+  <p>The Grand Assembly of Astoria shall convene under its provisions.</p>
+
+  <p>The Courts of Astoria shall administer justice under its provisions.</p>
+
+  <p>The Armed Forces of Astoria shall defend the Principality under its provisions.</p>
+
+  <p>The Constitution shall take full force and effect immediately upon this proclamation.</p>
+
+  <p>Let it be known to all citizens of Astoria, and to all who may observe its rise, that the Principality stands established in continuity, sovereignty, and purpose.</p>
+
+  <p>For All Time, For All People, Always.</p>
+
+  <p>Issued under the Crown this 25th day of February, in the year 2026</p>
+
+  <p>Signed,</p>
+  <p>Her Sovereign Highness</p> 
+  <p>Lillian Iris Rose</p>
+  <p>Princess Regnant of Astoria</p>
+</details>
+</main>
+
+
+<footer>
+
+Official Site of the Principality of Astoria
+
+</footer>
+
+
+</body>
+
+</html>
