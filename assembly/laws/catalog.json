@@ -1,1 +1,15 @@
-
+[
+  {
+    "id": "AST-2026-01",
+    "type": "Act",
+    "title": "Currency and Treasury Act",
+    "status": "In force",
+    "year": 2026,
+    "date_passed": "2026-02-26",
+    "date_approved": "2026-02-26",
+    "date_effective": "2026-02-26",
+    "summary": "Establishes the Astorian Crown (AC/ASC) as the national currency, defines the authority of the Ministry of the Treasury, creates the public treasury ledger, and establishes the national budget framework.",
+    "tags": ["Treasury", "Currency", "Budget", "Finance", "Administration"],
+    "url": "laws/AST-2026-01.html"
+  }
+]
