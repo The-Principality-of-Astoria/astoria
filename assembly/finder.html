@@ -62,6 +62,22 @@ hr {
   margin: 14px 0;
 }
 
+select {
+  background-color: #1a0610;
+  color: white;
+}
+
+select option {
+  background-color: #2b0a14;
+  color: white;
+}
+
+select option:checked,
+select option:hover {
+  background-color: #3b0f1a;
+  color: white;
+}
+
 .motto {
 font-style: italic;
 color: gold;
@@ -96,7 +112,7 @@ For Crown and People
   <input id="q" type="text" placeholder="Search by number, title, topic..." style="width:100%; padding:10px; border-radius:8px; border:1px solid rgba(255,255,255,0.15); background:rgba(255,255,255,0.06); color:white;">
 
   <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
-    <select id="type" style="padding:10px; border-radius:8px; background:rgba(255,255,255,0.06); color:white; border:1px solid rgba(255,255,255,0.15);">
+    <select id="type">
       <option value="">All Types</option>
     </select>
 
