@@ -89,6 +89,140 @@ For Crown and People
 
 <main>
 
+<div class="details-card">
+  <h2>Legislation Finder</h2>
+  <p class="motto">Search and access enacted Astorian law.</p>
+
+  <input id="q" type="text" placeholder="Search by number, title, topic..." style="width:100%; padding:10px; border-radius:8px; border:1px solid rgba(255,255,255,0.15); background:rgba(255,255,255,0.06); color:white;">
+
+  <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
+    <select id="type" style="padding:10px; border-radius:8px; background:rgba(255,255,255,0.06); color:white; border:1px solid rgba(255,255,255,0.15);">
+      <option value="">All Types</option>
+    </select>
+
+    <select id="year" style="padding:10px; border-radius:8px; background:rgba(255,255,255,0.06); color:white; border:1px solid rgba(255,255,255,0.15);">
+      <option value="">All Years</option>
+    </select>
+
+    <select id="status" style="padding:10px; border-radius:8px; background:rgba(255,255,255,0.06); color:white; border:1px solid rgba(255,255,255,0.15);">
+      <option value="">All Statuses</option>
+    </select>
+  </div>
+</div>
+
+<div id="results"></div>
+<script>
+  const CATALOG_URL = "laws/catalog.json";
+
+  const qEl = document.getElementById("q");
+  const typeEl = document.getElementById("type");
+  const yearEl = document.getElementById("year");
+  const statusEl = document.getElementById("status");
+  const resultsEl = document.getElementById("results");
+
+  let all = [];
+
+  function norm(s) {
+    return String(s ?? "").toLowerCase();
+  }
+
+  function dateKey(item) {
+    // Prefer approved date; fallback to passed date; fallback to 0000-00-00
+    return item.date_approved || item.date_passed || "0000-00-00";
+  }
+
+  function uniqueSorted(values) {
+    return [...new Set(values.filter(Boolean))].sort((a,b) => (a > b ? 1 : -1));
+  }
+
+  function fillSelect(selectEl, values, label) {
+    const current = selectEl.value;
+    // Keep the first "All ..." option
+    selectEl.innerHTML = `<option value="">${label}</option>`;
+    for (const v of values) {
+      const opt = document.createElement("option");
+      opt.value = v;
+      opt.textContent = v;
+      selectEl.appendChild(opt);
+    }
+    // Restore selection if possible
+    selectEl.value = current;
+  }
+
+  function render(list) {
+    if (!list.length) {
+      resultsEl.innerHTML = `<div class="details-card"><p>No matching legislation found.</p></div>`;
+      return;
+    }
+
+    resultsEl.innerHTML = list.map(item => {
+      const tags = (item.tags || []).map(t => `<span style="display:inline-block; padding:2px 8px; margin:4px 6px 0 0; border:1px solid rgba(255,255,255,0.15); border-radius:999px; font-size:0.85em;">${t}</span>`).join("");
+      return `
+        <div class="details-card">
+          <h3 style="margin:0 0 6px 0;">
+            <a href="${item.url}" style="color:gold; text-decoration:none;">${item.id}: ${item.title}</a>
+          </h3>
+          <p style="margin:0 0 8px 0; opacity:0.95;">
+            <strong>Type:</strong> ${item.type || "—"} |
+            <strong>Status:</strong> ${item.status || "—"} |
+            <strong>Passed:</strong> ${item.date_passed || "—"} |
+            <strong>Approved:</strong> ${item.date_approved || "—"}
+          </p>
+          <p style="margin:0 0 8px 0;">${item.summary || ""}</p>
+          <div>${tags}</div>
+        </div>
+      `;
+    }).join("");
+  }
+
+  function applyFilters() {
+    const q = norm(qEl.value);
+    const t = typeEl.value;
+    const y = yearEl.value;
+    const s = statusEl.value;
+
+    const filtered = all
+      .filter(item => !t || item.type === t)
+      .filter(item => !y || String(item.year) === String(y))
+      .filter(item => !s || item.status === s)
+      .filter(item => {
+        if (!q) return true;
+        const blob = [
+          item.id, item.title, item.summary,
+          (item.tags || []).join(" ")
+        ].map(norm).join(" | ");
+        return blob.includes(q);
+      })
+      .sort((a,b) => dateKey(b).localeCompare(dateKey(a)));
+
+    render(filtered);
+  }
+
+  async function init() {
+    try {
+      const res = await fetch(CATALOG_URL, { cache: "no-store" });
+      if (!res.ok) throw new Error(`Failed to load catalog (${res.status})`);
+      all = await res.json();
+
+      // Fill dropdowns
+      fillSelect(typeEl, uniqueSorted(all.map(x => x.type)), "All Types");
+      fillSelect(yearEl, uniqueSorted(all.map(x => String(x.year))).sort().reverse(), "All Years");
+      fillSelect(statusEl, uniqueSorted(all.map(x => x.status)), "All Statuses");
+
+      // Wire events
+      [qEl, typeEl, yearEl, statusEl].forEach(el => el.addEventListener("input", applyFilters));
+      [typeEl, yearEl, statusEl].forEach(el => el.addEventListener("change", applyFilters));
+
+      applyFilters();
+    } catch (err) {
+      resultsEl.innerHTML = `<div class="details-card"><p><strong>Error:</strong> ${err.message}</p></div>`;
+    }
+  }
+
+  init();
+</script>
+
+
 </main>
 
 <footer>
