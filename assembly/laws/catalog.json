@@ -11,5 +11,18 @@
     "summary": "Establishes the Astorian Crown (AC/ASC) as the national currency, defines the authority of the Ministry of the Treasury, creates the public treasury ledger, and establishes the national budget framework.",
     "tags": ["Treasury", "Currency", "Budget", "Finance", "Administration"],
     "url": "laws/AST-2026-01.html"
+  },
+  {
+    "id": "AST-2026-02",
+    "type": "Act",
+    "title": "Executive Ministries Act",
+    "status": "In force",
+    "year": 2026,
+    "date_passed": "2026-03-04",
+    "date_approved": "2026-03-04",
+    "date_effective": "2026-03-04",
+    "summary": "Establishes the Executive Ministries of the Principality, defines their authority and duties, and provides for the orderly administration of the Government.",
+    "tags": ["Administration", "Executive", "Ministries"],
+    "url": "laws/AST-2026-02.html"
   }
 ]
