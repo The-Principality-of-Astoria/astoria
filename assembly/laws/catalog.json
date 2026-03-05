@@ -24,5 +24,44 @@
     "summary": "Establishes the Executive Ministries of the Principality, defines their authority and duties, and provides for the orderly administration of the Government.",
     "tags": ["Administration", "Executive", "Ministries"],
     "url": "laws/AST-2026-02.html"
+  },
+  {
+    "id": "AST-2026-03",
+    "type": "Act",
+    "title": "Citizenship Act",
+    "status": "In force",
+    "year": 2026,
+    "date_passed": "2026-03-04",
+    "date_approved": "2026-03-04",
+    "date_effective": "2026-03-04",
+    "summary": "Establishes law governing citizenship of the Principality, defines the rights, privileges, and obligations of citizens, and provides for the granting and revocation of citizenship.",
+    "tags": ["Administration", "Executive", "Citizenship"],
+    "url": "laws/AST-2026-03.html"
+  },
+  {
+    "id": "AST-2026-04",
+    "type": "Act",
+    "title": "Civil Service Act",
+    "status": "In force",
+    "year": 2026,
+    "date_passed": "2026-03-04",
+    "date_approved": "2026-03-04",
+    "date_effective": "2026-03-04",
+    "summary": "Establishes the Civil Service, defines its administration, eligibility, and duties, and provides for the orderly employment of government personnel.",
+    "tags": ["Administration", "Executive", "Legislative", "Employment"],
+    "url": "laws/AST-2026-04.html"
+  },
+  {
+    "id": "AST-2026-05",
+    "type": "Act",
+    "title": "Criminal Code Act",
+    "status": "In force",
+    "year": 2026,
+    "date_passed": "2026-03-04",
+    "date_approved": "2026-03-04",
+    "date_effective": "2026-03-04",
+    "summary": "Defines criminal offenses within the Principality, establishes standards of liability and punishment, and provides for the protection of the State, its citizens, and its institutions.",
+    "tags": ["Administration", "Judicial", "Criminal"],
+    "url": "laws/AST-2026-05.html"
   }
 ]
